@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Bootstrap Example</title>
+    <title>CooklyBlog</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -17,17 +17,34 @@
 
     {% for blog in data_blog %}
     <div class="row">
-        <div>
-            <h3>{{blog.title}}</h3>
-        </div>
-        <div>
-            <p>
-                {{blog.content}}
-            </p>
+        <div class="panel">
+            <div class="col-xs-12">
+                <h3>{{blog.title}}</h3>
+            </div>
+            <div class="col-xs-12">
+                <p>
+                    {{blog.content}}
+                </p>
+            </div>
+            <div class="col-xs-12">
+                <p>{{blog.create_at}}</p>
+            </div>
         </div>
     </div>
-
     {% endfor %}
+
+    <div class="col-xs-12 form-group">
+        <form method="post">
+            {% csrf_token %}
+            <label for="id_title">Title:</label>
+            <input class="form-control" id="id_title" maxlength="100" name="title" type="text">
+            <label for="id_content">Content:</label>
+            <textarea class="form-control" id="id_content" maxlength="1000" name="content" rows="10"></textarea>
+            <input class="btn" type="submit" value="OK">
+        </form>
+    </div>
+</div>
+
 
 
 </body>
