@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'location_field',
     'blogpost',
+    'activities',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -78,7 +80,7 @@ WSGI_APPLICATION = 'cooklyblog.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'cooklyblog',
         'USER': 'cooklyblog',
         'PASSWORD': 'mypassword',

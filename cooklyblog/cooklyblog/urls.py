@@ -16,8 +16,10 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from blogpost.views import homepage
+from activities.views import activity_select_page
 
 urlpatterns = [
     url(r'^$', homepage, name='Home'),
+    url(r'^classes/', activity_select_page),
     url(r'^admin/', admin.site.urls),
 ]
